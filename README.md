@@ -9,7 +9,7 @@ This helps identify whether files have been:
 - Deleted  
 - Left unchanged  
 
-HashCheck is useful for cybersecurity student and DFIR professional, and anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
+HashCheck is useful for cybersecurity students and DFIR professionals, or anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
 
 
 ## Platform Support
