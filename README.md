@@ -1,94 +1,90 @@
 # The Operators - Simple File Integrity & Change Detection
 
-HashCheck is a **file integrity verification tool** designed for Digital Forensics & Incident Response (DFIR) workflows.
+# The Operators — Simple File Integrity & Change Detection
 
-It lets you:
+## Project Overview
+HashCheck is a simple file integrity verification tool designed to detect changes in files over time.  
+It allows a user to create a **baseline** of cryptographic hashes for all files in a selected folder, and later **verify** the current state of that folder against the original baseline.
 
-- Create a **baseline** of file hashes from a folder (manifest)
-- Later **verify** that folder against the baseline
-- Instantly see which files are **unchanged, modified, new, or missing**
-- Export results to **CSV** for further analysis
+This helps identify whether files have been:
+- Modified  
+- Added  
+- Deleted  
+- Or left unchanged  
 
-Built with Python and Tkinter, HashCheck provides a clean, dark-mode GUI that’s easy enough for students to use and realistic enough for IR-style workflows.
+HashCheck is useful for cybersecurity students, incident response practice, digital forensics labs, and anyone who needs a clear view of how files change between two points in time.
+
+---
+
+## 🖥 Platform Support
+HashCheck is currently designed for **Windows systems only**.  
+Linux and macOS may require additional configuration and have **not been tested**.
 
 ---
 
 ## Features
 
-- **Cryptographic hashing**
-  - Supports common algorithms: `SHA-256`, `SHA-1`, `MD5`
-- **Recursive directory scanning**
-  - Optionally scans all subfolders, not just the top-level directory
-- **Baseline & verify workflow**
-  - **Scan mode**: generate a manifest of files + hashes
-  - **Verify mode**: compare current files against a previous manifest
-- **Visual, color-coded results**
-  - Normal – unchanged files  
-  - **MISMATCH** – file content changed  
-  - **NEW** – file wasn’t in the original baseline  
-  - **MISSING** – file was in the baseline but no longer exists  
-  - **ERROR** – file couldn’t be read/hashed
-- **Analyst-friendly CSV export**
-  - Exports results to CSV for review in Excel, SIEM, or other tools
-- **Dark mode UI**
-  - Borderless, modern look with slightly larger fonts for readability
+- **Baseline Scan**  
+  Generate a CSV manifest of files, including paths, sizes, last modified timestamps, and hashes.
+
+- **Verification Scan**  
+  Compare current files to a previous baseline and detect:
+  - **OK** – Unchanged  
+  - **MISMATCH** – File modified  
+  - **NEW** – File added  
+  - **MISSING** – File deleted  
+  - **ERROR** – File unreadable or hashing failed  
+
+- **User Interface**  
+  Clean & Simple interface with color-coded results.
+
+- **Recursive Scanning**  
+  Option to include all subfolders during scans.
+
+- **CSV Export**  
+  Save baseline or verification results for further analysis or documentation.
 
 ---
 
-## Why HashCheck?
+## Setup & Run Instructions
 
-### 1. What problem does it solve?
+### 1. Install Python
+Ensure you have **Python (3.9 is recommended)** installed on Windows.
 
-In cybersecurity and forensics, you often need to answer questions like:
 
-- *“Which files changed after this incident?”*  
-- *“What did the malware encrypt or modify?”*  
-- *“Is this evidence still in its original state?”*
+### 3. Download the Project Files
+Place the following files together in the same directory:
+- hashcheck.py
+- hashcheck_gui.py
 
-Manually checking files or eyeballing timestamps doesn’t scale.  
-**HashCheck** automates this by using cryptographic hashes and a simple baseline/verify workflow.
-
----
-
-### 2. Why is it important?
-
-Hash-based integrity checks are used in:
-
-- **Incident response** – Identify tampered, encrypted, or deleted files  
-- **Ransomware investigations** – See exactly what was impacted  
-- **Digital forensics** – Verify that evidence hasn’t changed  
-- **System administration** – Detect configuration drift or unexpected changes
-
-HashCheck provides these capabilities in a way that’s:
-
-- Free
-- Easy to run
-- Visual and approachable for students & junior analysts
+### 4. Run Hashcheck
+Open a command prompt or PowerShell window in the project directory and run
 
 ---
 
-### 3. Why would others want to use it?
-
-For fellow students, HashCheck is:
-
-- **Perfect for labs & projects**
-  - Malware labs, IR simulations, forensics assignments
-- **Beginner-friendly**
-  - No command-line required, everything is in the GUI
-- **Good for reports**
-  - CSV output works great in Excel or as an appendix in lab reports
-- **Real-world relevant**
-  - Mimics workflows used by real IR and forensics teams
+## How to Use HashCheck
+Creating a Baseline
+  1. Launch the application
+  2. Select a target file or folder
+  3. Choose where you want your scan results (manifest) to be stored
+  4. Select a hashing algorithm (e.g., SHA-256)
+  5. Enable recursive if you want to include subfolders
+  6. Click "Run Scan"
+  7. You can either review results in a CSV or within the HashCheck GUI itself
 
 ---
 
-## Project Structure
+## Verifying File Integrity
+1. Switch to the Verify tab
+2. Select the same folder
+3. Choose your previously created or most recent baseline CSV
+4. Click "Run Verify"
 
-Suggested layout:
+### HashCheck will compare the current state of the directory to the baseline and show results with color-coded statuses:
+- Normal | No color
+- Mismatch | Red
+- New File | Orange
+- Missing File | Gray
+- Error | Magenta/Purple
 
-```bash
-hashcheck/
-├─ hashcheck.py            # Core hashing & manifest logic (backend)
-├─ hashcheck_frontend.py   # Tkinter GUI (frontend)
-├─ README.md               # This file
-└─ requirements.txt        # (Optional) Python dependencies
+  
