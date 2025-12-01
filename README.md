@@ -12,8 +12,7 @@ This helps identify whether files have been:
 HashCheck is useful for cybersecurity student and DFIR professional, and anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
 
 ## Platform Support
-HashCheck is currently designed for **Windows systems only**.  
-Linux and macOS may require additional configuration and have **not been tested**.
+HashCheck is currently designed for **Windows systems only**. Linux and macOS may require additional configuration and have **not been tested**.
 
 ## Features
 
@@ -22,11 +21,11 @@ Linux and macOS may require additional configuration and have **not been tested*
 
 - **Verification Scan**  
   Compare current files to a previous baseline and detect:
-  - **OK** – Unchanged  
-  - **MISMATCH** – File modified  
-  - **NEW** – File added  
-  - **MISSING** – File deleted  
-  - **ERROR** – File unreadable or hashing failed  
+  - **OK** – Unchanged | No Color
+  - **MISMATCH** – File modified | Red
+  - **NEW FILE** – File added | Orange
+  - **MISSING FILE** – File deleted | Grey
+  - **ERROR** – File unreadable or hashing failed | Magenta/Purple
 
 - **User Friendly Interface**  
   Clean & Simple interface with color-coded results.
@@ -40,8 +39,7 @@ Linux and macOS may require additional configuration and have **not been tested*
 ## Setup & Run Instructions
 
 ### 1. Install Python
-Ensure you have **Python (3.9 is recommended)** installed on Windows.
-You can install Python here: https://www.python.org/downloads/
+Ensure you have **Python (3.9 is recommended)** installed on Windows. You can install Python here: https://www.python.org/downloads/
 
 ### 2. Download the Project Files
 Place the following files together in the same directory:
@@ -49,7 +47,7 @@ Place the following files together in the same directory:
 - hashcheck_gui.py
 
 ### 3. Run Hashcheck
-Double-clicking on the hashcheck_gui.py file will run HashCheck, you will see a command prompt window open, and shortly after that, HashCheck's user friendly interface will open!
+Double-clicking on the hashcheck_gui.py file will run HashCheck. You will see a command prompt window open, and shortly after that, HashCheck's user-friendly interface will appear!
 
 ## How to Use HashCheck
 Creating a Baseline:
@@ -66,12 +64,5 @@ Creating a Baseline:
 2. Select the same folder
 3. Choose your previously created or most recent baseline CSV
 4. Click "Run Verify"
-
-## HashCheck will compare the current state of the directory to the baseline and show results with color-coded statuses:
-- Normal | No color
-- Mismatch | Red
-- New File | Orange
-- Missing File | Gray
-- Error | Magenta/Purple
 
   
