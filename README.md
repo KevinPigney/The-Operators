@@ -1,7 +1,7 @@
 # The Operators - HashCheck
 
 ## Project Overview
-HashCheck is a simple file integrity verification tool designed to detect changes in files over time. It allows a user to create a **baseline** of cryptographic hashes for all files in a selected folder, and later **verify** the current state of that folder against the original baseline.
+HashCheck is a simple file integrity verification tool designed to detect changes in files over time. It allows a user to create a baseline of cryptographic hashes for all files in a selected folder, and later verify the current state of that folder against the original baseline.
 
 This helps identify whether files have been:
 - Modified  
@@ -28,7 +28,7 @@ Linux and macOS may require additional configuration and have **not been tested*
   - **MISSING** – File deleted  
   - **ERROR** – File unreadable or hashing failed  
 
-- **User Interface**  
+- **User Friendly Interface**  
   Clean & Simple interface with color-coded results.
 
 - **Recursive Scanning**  
