@@ -42,15 +42,15 @@ Linux and macOS may require additional configuration and have **not been tested*
 
 ### 1. Install Python
 Ensure you have **Python (3.9 is recommended)** installed on Windows.
+You can install Python here: https://www.python.org/downloads/
 
-
-### 3. Download the Project Files
+### 2. Download the Project Files
 Place the following files together in the same directory:
 - hashcheck.py
 - hashcheck_gui.py
 
-### 4. Run Hashcheck
-Open a command prompt or PowerShell window in the project directory and run
+### 3. Run Hashcheck
+Double-clicking on the hashcheck_gui.py file will run HashCheck, you will see a command prompt window open, and shortly after that, HashCheck's user friendly interface will open!
 
 ## How to Use HashCheck
 Creating a Baseline
