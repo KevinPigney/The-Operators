@@ -50,7 +50,7 @@ Place the following files together in the same directory:
 - hashcheck_gui.py
 
 ### 3. Run Hashcheck
-Double-clicking on the hashcheck_gui.py file will run HashCheck. You will see a command prompt window open, and shortly after that, HashCheck's user-friendly interface will appear!
+Double-clicking on the **hashcheck_gui.py** file will run HashCheck. You will see a command prompt window open, and shortly after that, HashCheck's user-friendly interface will appear!
 
 
 ## How to Use HashCheck
