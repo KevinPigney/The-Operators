@@ -11,8 +11,10 @@ This helps identify whether files have been:
 
 HashCheck is useful for cybersecurity student and DFIR professional, and anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
 
+
 ## Platform Support
 HashCheck is currently designed and tested for **Windows 10 & Windows 11**, Linux and macOS may require additional configuration and have **not been tested**.
+
 
 ## Features
 
@@ -36,6 +38,7 @@ HashCheck is currently designed and tested for **Windows 10 & Windows 11**, Linu
 - **CSV Export**  
   Save baseline or verification results for further analysis or documentation.
 
+
 ## Setup & Run Instructions
 
 ### 1. Install Python
@@ -49,6 +52,7 @@ Place the following files together in the same directory:
 ### 3. Run Hashcheck
 Double-clicking on the hashcheck_gui.py file will run HashCheck. You will see a command prompt window open, and shortly after that, HashCheck's user-friendly interface will appear!
 
+
 ## How to Use HashCheck
 Creating a Baseline:
   1. Launch the application
@@ -58,6 +62,7 @@ Creating a Baseline:
   5. Enable recursive if you want to include subfolders
   6. Click "Run Scan"
   7. You can either review results in a CSV or within the HashCheck GUI itself
+
 
 ## Verifying File Integrity
 1. Switch to the Verify tab
