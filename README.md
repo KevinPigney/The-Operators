@@ -12,7 +12,7 @@ This helps identify whether files have been:
 HashCheck is useful for cybersecurity student and DFIR professional, and anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
 
 ## Platform Support
-HashCheck is currently designed for **Windows systems only**. Linux and macOS may require additional configuration and have **not been tested**.
+HashCheck is currently designed and tested for **Windows 10 & Windows 11**, Linux and macOS may require additional configuration and have **not been tested**.
 
 ## Features
 
