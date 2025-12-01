@@ -67,7 +67,7 @@ Creating a Baseline:
 3. Choose your previously created or most recent baseline CSV
 4. Click "Run Verify"
 
-### HashCheck will compare the current state of the directory to the baseline and show results with color-coded statuses:
+## HashCheck will compare the current state of the directory to the baseline and show results with color-coded statuses:
 - Normal | No color
 - Mismatch | Red
 - New File | Orange
