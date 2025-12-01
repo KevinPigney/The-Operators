@@ -14,7 +14,7 @@ HashCheck is useful for cybersecurity students, incident response practice, digi
 
 ---
 
-## 🖥 Platform Support
+## Platform Support
 HashCheck is currently designed for **Windows systems only**.  
 Linux and macOS may require additional configuration and have **not been tested**.
 
