@@ -52,7 +52,7 @@ Place the following files together in the same directory:
 Double-clicking on the hashcheck_gui.py file will run HashCheck, you will see a command prompt window open, and shortly after that, HashCheck's user friendly interface will open!
 
 ## How to Use HashCheck
-Creating a Baseline
+Creating a Baseline:
   1. Launch the application
   2. Select a target file or folder
   3. Choose where you want your scan results (manifest) to be stored
