@@ -1,4 +1,4 @@
-# The Operators - HashCheck (Simple File Integrity & Change Detection)
+# The Operators - HashCheck
 
 ## Project Overview
 HashCheck is a simple file integrity verification tool designed to detect changes in files over time.  
@@ -12,13 +12,9 @@ This helps identify whether files have been:
 
 HashCheck is useful for cybersecurity students, incident response practice, digital forensics labs, and anyone who needs a clear view of how files change between two points in time.
 
----
-
 ## Platform Support
 HashCheck is currently designed for **Windows systems only**.  
 Linux and macOS may require additional configuration and have **not been tested**.
-
----
 
 ## Features
 
@@ -42,8 +38,6 @@ Linux and macOS may require additional configuration and have **not been tested*
 - **CSV Export**  
   Save baseline or verification results for further analysis or documentation.
 
----
-
 ## Setup & Run Instructions
 
 ### 1. Install Python
@@ -58,8 +52,6 @@ Place the following files together in the same directory:
 ### 4. Run Hashcheck
 Open a command prompt or PowerShell window in the project directory and run
 
----
-
 ## How to Use HashCheck
 Creating a Baseline
   1. Launch the application
@@ -69,8 +61,6 @@ Creating a Baseline
   5. Enable recursive if you want to include subfolders
   6. Click "Run Scan"
   7. You can either review results in a CSV or within the HashCheck GUI itself
-
----
 
 ## Verifying File Integrity
 1. Switch to the Verify tab
