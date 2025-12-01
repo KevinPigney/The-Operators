@@ -1,4 +1,4 @@
-# The Operators - Simple File Integrity & Change Detection
+# The Operators - HashCheck (Simple File Integrity & Change Detection)
 
 ## Project Overview
 HashCheck is a simple file integrity verification tool designed to detect changes in files over time.  
