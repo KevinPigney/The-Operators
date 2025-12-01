@@ -1,16 +1,15 @@
 # The Operators - HashCheck
 
 ## Project Overview
-HashCheck is a simple file integrity verification tool designed to detect changes in files over time.  
-It allows a user to create a **baseline** of cryptographic hashes for all files in a selected folder, and later **verify** the current state of that folder against the original baseline.
+HashCheck is a simple file integrity verification tool designed to detect changes in files over time. It allows a user to create a **baseline** of cryptographic hashes for all files in a selected folder, and later **verify** the current state of that folder against the original baseline.
 
 This helps identify whether files have been:
 - Modified  
 - Added  
 - Deleted  
-- Or left unchanged  
+- Left unchanged  
 
-HashCheck is useful for cybersecurity students, incident response practice, digital forensics labs, and anyone who needs a clear view of how files change between two points in time.
+HashCheck is useful for cybersecurity student and DFIR professional, and anyone looking for a lightweight tool that will provide a clear view of how files change between two points in time.
 
 ## Platform Support
 HashCheck is currently designed for **Windows systems only**.  
