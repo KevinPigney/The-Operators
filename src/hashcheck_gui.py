@@ -552,7 +552,7 @@ class HashCheckGUI(tk.Tk):
         """
         Collect all files under the given root path.
 
-        If  root is a file, returns [root].
+        If root is a file, returns [root].
         If root is a directory:
             - recursive=True --> walk all subdirectories
             - recursive=False --> only top-level entries
