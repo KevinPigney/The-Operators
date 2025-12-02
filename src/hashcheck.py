@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """
-HashCheck (starter): dead-simple, forensically-friendly file hashing & verification.
-- Default algo: sha256 (use --algo md5|sha1 for legacy compatibility)
-- Modes: scan (produce CSV), verify (compare against previous CSV manifest)
-- Handles single files or directories (recursive)
-- Chunked reads for large files
-No external dependencies.
+HashCheck: A lightweight, forensically-friendly file hashing & verification tool.
+
+Modes:
+SCAN - Produce a CSV manifest containing file paths, sizes, timestamps, and hashes.
+VERIFY - Compare a live directory against a previous manifest and flags changes.
+
+Features:
+- Supports SHA-256 (default), SHA-1, and MD5
+- Recursive folder scanning
+- Handles large files via chunked reads (4MB)
+- No external dependencies (100% Python)
 """
+
 from __future__ import annotations
 import argparse, csv, datetime, hashlib, os, sys, uuid, platform
 from pathlib import Path
@@ -15,9 +21,25 @@ from typing import Iterable, Dict
 CHUNK = 4 * 1024 * 1024  # 4MB
 
 def utc_iso(ts: float) -> str:
+    """
+    Convert a POSIX timestamp into a clean, zero-microsecond UTC ISO formatter.
+    Example: 2025-11-15T16:22:10Z
+    """
     return datetime.datetime.utcfromtimestamp(ts).replace(microsecond=0).isoformat() + "Z"
 
 def hash_file(path: Path, algo: str) -> Dict[str, str]:
+    """
+    Hash a single file using the given algorithm (sha256, sha1, md5).
+
+    Returns a standardized dictionary containing:
+    - path (absolute)
+    - size_bytes
+    - mtime_utc (modification time)
+    - algo (hashing algorithm used)
+    - hash (hex digest)
+    - status ("OK" during scan)
+    - error field (empty unless exception occurs)
+    """
     st = path.stat()
     h = hashlib.new(algo)
     with path.open("rb") as f:
@@ -37,6 +59,13 @@ def hash_file(path: Path, algo: str) -> Dict[str, str]:
     }
 
 def iter_targets(root: Path, recursive: bool) -> Iterable[Path]:
+    """
+    Yield every file to be processed.
+
+    Handles:
+    - Single-file hashing
+    - Directory hashing (with or without recursion)
+    """
     if root.is_file():
         yield root
         return
@@ -52,6 +81,14 @@ def iter_targets(root: Path, recursive: bool) -> Iterable[Path]:
                 yield p
 
 def write_csv(rows, out_path: Path, run_meta: Dict[str, str]):
+    """
+    Save all scanned or verified file information to a CSV output.
+
+    Includes run metadata:
+    - run_id
+    - timestamp
+    - host OS information
+    """
     newfile = not out_path.exists()
     with out_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -74,6 +111,12 @@ def write_csv(rows, out_path: Path, run_meta: Dict[str, str]):
             ])
 
 def load_manifest(manifest: Path):
+    """
+    Load an existing CSV manifest (created by SCAN mode).
+
+    Returns:
+        dict[path] = {"hash" : <hex>, "aglo" : <algorithm>}
+    """
     data = {}
     with manifest.open("r", encoding="utf-8") as f:
         rd = csv.DictReader(f)
@@ -86,6 +129,12 @@ def load_manifest(manifest: Path):
     return data
 
 def scan(args):
+    """
+    SCAN MODE:
+    - Walk the directory (or single file)
+    - Hash everything
+    - Save a baseline manifest CSV
+    """
     target = Path(args.path)
     algo = args.algo.lower()
     run_meta = {
@@ -114,6 +163,13 @@ def scan(args):
     print(f"[+] Wrote CSV: {out} ({len(rows)} rows)")
 
 def verify(args):
+    """
+    VERIFY MODE:
+    - Re-hash all files
+    - Compare against baseline manifest
+    - Detect MISMATCH, NEW, MISSING, files
+    - Produce a verification CSV report
+    """
     target = Path(args.path)
     manifest = Path(args.manifest)
     known = load_manifest(manifest)
@@ -170,6 +226,11 @@ def verify(args):
     print(f"[+] Wrote CSV: {out} (OK={counts.get('OK',0)}, MISMATCH={counts.get('MISMATCH',0)}, NEW={counts.get('NEW',0)}, MISSING={counts.get('MISSING',0)}, ERROR={counts.get('ERROR',0)})")
 
 def main():
+    """
+    CLI entrypoint for:
+        hashcheck scan <path> --out manifest.csv
+        hashcheck verify <path> --manifest manifest.csv --out verify.csv
+    """
     ap = argparse.ArgumentParser(description="HashCheck starter (CLI)")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
