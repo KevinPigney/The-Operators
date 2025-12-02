@@ -1,1 +1,1 @@
-
+Hashcheck does not require any external libraries. Built-in Python modules are used.
