@@ -1,0 +1,3 @@
+Alter this data to test HashCheck's color-coded flags within the GUI:
+
+Since when did McDonald's get so expensive?
