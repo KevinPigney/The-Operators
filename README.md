@@ -73,7 +73,6 @@ Creating a Baseline:
 ## HashCheck Video Presentation
 The following video is our official IT 360 project presentation for **HashCheck**. In this video, I explain what HashCheck is, why we built it, its importance in DFIR, who would benefit from using it, and then I walk through a full live demonstration — starting from downloading the tool directly from GitHub and running it on a Windows system.
 
-**Watch the Presentation Here:**  
-YouTube: https://youtu.be/Ex4NMTCcrD0?si=1574bSX8s6ome2ND
+**Watch the Presentation Here:** https://youtu.be/Ex4NMTCcrD0?si=1574bSX8s6ome2ND
 
   
