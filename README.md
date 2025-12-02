@@ -70,4 +70,7 @@ Creating a Baseline:
 3. Choose your previously created or most recent baseline CSV
 4. Click "Run Verify"
 
+## Video Walkthrough
+https://youtu.be/Ex4NMTCcrD0?si=1574bSX8s6ome2ND
+
   
