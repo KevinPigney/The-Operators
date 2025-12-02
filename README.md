@@ -71,7 +71,7 @@ Creating a Baseline:
 4. Click "Run Verify"
 
 ## Video Walkthrough
-Visual Demonstration showing how easy it is to download, run, and use HashCheck
+Visual Demonstration showing how easy it is to download, run, and use HashCheck.
 YouTube: https://youtu.be/Ex4NMTCcrD0?si=1574bSX8s6ome2ND
 
   
